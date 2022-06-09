@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import CustomButton from "../../components/customButton/customButton";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import SocialSignInButtons from "../../components/SocialSignInButtons";
 
 const SignUpScreen = () => {
   const [username, setUsername] = useState("");
@@ -13,33 +14,17 @@ const SignUpScreen = () => {
     console.warn("OnRegisterPressed");
   };
 
-  const onForgotPasswordPressed = () => {
-    console.warn("OnForgotPasswordPressed");
-  };
-
-  const onSignInFacebook = () => {
-    console.warn("Facebook");
-  };
-
-  const onSignInApple = () => {
-    console.warn("Apple");
-  };
-
-  const onSignInGoogle = () => {
-    console.warn("Google");
-  };
-
-  const onSignUpPress = () => {
-    console.warn("onSignUpPress");
+  const onSignInPress = () => {
+    console.warn("onSignInPress");
   };
 
   const onTermsOfUsePressed = () => {
-      console.warn("onTermsOfUsePressed")
+    console.warn("onTermsOfUsePressed");
   };
 
   const onPrivacyPressed = () => {
-    console.warn("onPrivacyPolicyPressed")
-};
+    console.warn("onPrivacyPolicyPressed");
+  };
 
   return (
     <ScrollView>
@@ -69,38 +54,18 @@ const SignUpScreen = () => {
 
         <Text style={styles.text}>
           By registering, you confirm that you accept our{" "}
-          <Text style={styles.link} onPress={onTermsOfUsePressed}>terms of use</Text> and
-          <Text style={styles.link} onPress={onPrivacyPressed}> privacy policy</Text>
+          <Text style={styles.link} onPress={onTermsOfUsePressed}>
+            Terms of Use
+          </Text>{" "}
+          and{" "}
+          <Text style={styles.link} onPress={onPrivacyPressed}>
+            Privacy Policy
+          </Text>
         </Text>
-
+        <SocialSignInButtons />
         <CustomButton
-          text="Forgot password?"
-          onPress={onForgotPasswordPressed}
-          type="TERTIARY"
-        />
-
-        <CustomButton
-          text="Sign In with Facebook"
-          onPress={onSignInFacebook}
-          bgColor="#E7EAF4"
-          fgColor="#4765A9"
-        />
-        <CustomButton
-          text="Sign In with Google"
-          onPress={onSignInGoogle}
-          bgColor="#FAE9EA"
-          fgColor="#DD4D44"
-        />
-        <CustomButton
-          text="Sign In with Apple"
-          onPress={onSignInApple}
-          bgColor="#E3E3E3"
-          fgColor="#363636"
-        />
-
-        <CustomButton
-          text="Don't have an account? Create one"
-          onPress={onSignUpPress}
+          text="Have an account? Sign in!"
+          onPress={onSignInPress}
           type="TERTIARY"
         />
       </View>
@@ -124,7 +89,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   link: {
-    color: "#fdb075",
+    color: "#FDB075",
   },
 });
 
