@@ -4,11 +4,12 @@ import SignInScreen from "./src/screens/SignInScreen";
 import SignUpScreen from "./src/screens/SignUpScreen";
 import ConfirmEmailScreen from "./src/screens/ConfirmEmailScreen/ConfirmEmailScreen";
 import ForgotPasswordScreen from "./src/screens/ForgotPasswordScreen/ForgotPasswordScreen";
+import NewPasswordScreen from "./src/screens/NewPasswordScreen/NewPasswordScreen";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <ForgotPasswordScreen/>
+      <NewPasswordScreen/>
     </SafeAreaView>
   );
 };
