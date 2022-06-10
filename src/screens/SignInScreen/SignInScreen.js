@@ -8,12 +8,13 @@ import {
   ScrollView,
 } from 'react-native';
 import Logo from '../../../assets/images/Logo.png';
-import CustomInput from '../../components/CustomInput/CustomInput';
+import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
-import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
+import SocialSignInButtons from '../../components/SocialSignInButtons';
 import {useNavigation} from '@react-navigation/native';
 
 const SignInScreen = () => {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,7 +23,7 @@ const SignInScreen = () => {
 
   const onSignInPressed = () => {
     // validate user
-    navigation.navigate('HomeScreen');
+    navigation.navigate('Home');
   };
 
   const onForgotPasswordPressed = () => {
