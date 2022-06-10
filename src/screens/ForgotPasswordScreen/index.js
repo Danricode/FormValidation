@@ -1,1 +1,1 @@
-export {ForgotPasswordScreen} from './ForgotPasswordScreen';
+export {default} from './ForgotPasswordScreen';

@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import CustomInput from "../../components/CustomInput/CustomInput";
-import CustomButton from "../../components/CustomButton/CustomButton";
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import CustomInput from '../../components/CustomInput/CustomInput';
+import CustomButton from '../../components/CustomButton/CustomButton';
+import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons';
+import {useNavigation} from '@react-navigation/core';
 
 const ForgotPasswordScreen = () => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
 
-  const onSendPress = () => {
-    console.warn("OnSendPress");
+  const navigation = useNavigation();
+
+  const onSendPressed = () => {
+    navigation.navigate('NewPassword');
   };
 
   const onSignInPress = () => {
-    console.warn("onSignInPress");
+    navigation.navigate('SignIn');
   };
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
         <Text style={styles.title}>Reset your password</Text>
 
@@ -23,13 +27,12 @@ const ForgotPasswordScreen = () => {
           placeholder="Username"
           value={username}
           setValue={setUsername}
-          secureTextEntry={true}
         />
 
-        <CustomButton text="Send" onPress={onSendPress} />
+        <CustomButton text="Send" onPress={onSendPressed} />
 
         <CustomButton
-          text="Back to sign in"
+          text="Back to Sign in"
           onPress={onSignInPress}
           type="TERTIARY"
         />
@@ -40,21 +43,21 @@ const ForgotPasswordScreen = () => {
 
 const styles = StyleSheet.create({
   root: {
-    alignItems: "center",
+    alignItems: 'center',
     padding: 20,
   },
   title: {
     fontSize: 24,
-    fontWeight: "bold",
-    color: "#051C60",
+    fontWeight: 'bold',
+    color: '#051C60',
     margin: 10,
   },
   text: {
-    color: "gray",
+    color: 'gray',
     marginVertical: 10,
   },
   link: {
-    color: "#FDB075",
+    color: '#FDB075',
   },
 });
 
